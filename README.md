@@ -7,6 +7,8 @@
 ## Функционал:
 - Регистрация пользователей и аутентификация по токену
 - CRUD-операции для постов и комментариев
+- Подписка и отписка от других пользователей
+- Просмотр сообществ
 
 ## Установка и запуск
 
@@ -67,24 +69,24 @@ http://127.0.0.1:8000/redoc/
   - **Метод:** $${\color{orange}POST}$$
   - **Эндпоинт:** api/v1/api-token-auth/
   - **Тело запроса:**
-   ```json
-   {
-     "username": "your_login",
-     "password": "your_password"
-   }
-   ```
-   - **Пример ответа:**
-   ```json
+  ```json
+  {
+    "username": "your_login",
+    "password": "your_password"
+  }
+  ```
+  - **Пример ответа:**
+  ```json
   {
     "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYyMDk0MTQ3NywianRpIjoiODUzYzE5MTg5NzMwNDQwNTk1ZjI3ZTBmOTAzZDcxZDEiLCJ1c2VyX2lkIjoxfQ.0vJBPIUZG4MjeU_Q-mhr5Gqjx7sFlO6AShlfeINK8nA",
     "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwODU1Mzc3LCJqdGkiOiJkY2EwNmRiYTEzNWQ0ZjNiODdiZmQ3YzU2Y2ZjNGE0YiIsInVzZXJfaWQiOjF9.eZfkpeNVfKLzBY7U0h5gMdTwUnGP3LjRn5g8EIvWlVg"
   } 
-   ```
-   Токен вернётся в поле access, а данные из поля refresh пригодятся для
-   обновления токена.
-   При каждом запросе к API нужно в заголовке запроса, в поле Authorization,
-   передавать основной токен доступа, полученный в поле access. Перед самим
-   токеном должно стоять ключевое слово Bearer и пробел: Bearer токен
+  ```
+  Токен вернётся в поле access, а данные из поля refresh пригодятся для
+  обновления токена.\
+  При каждом запросе к API нужно в заголовке запроса, в поле Authorization,
+  передавать основной токен доступа, полученный в поле access. Перед самим
+  токеном должно стоять ключевое слово Bearer и пробел: Bearer токен
 
 ### Автор
 **Чолий Александр** [[Telegram](https://t.me/alexander_choliy)]
