@@ -1,0 +1,8 @@
+from typing import Final
+
+MAX_ELEMENTS_PER_PAGE: Final[int] = 10
+MAX_STR_REPRESENTATION_LENGTH: Final[int] = 15
+
+MAX_GROUP_TITLE_LENGTH: Final[int] = 200
+MAX_GROUP_SLUG_LENGTH: Final[int] = 50
+MAX_GROUP_DESCRIPTION_LENGTH: Final[int] = 200
