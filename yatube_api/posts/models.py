@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.db.models import F, Q
 
 from .constants import (MAX_GROUP_DESCRIPTION_LENGTH, MAX_GROUP_SLUG_LENGTH,
                         MAX_GROUP_TITLE_LENGTH, MAX_STR_REPRESENTATION_LENGTH)
@@ -63,11 +62,9 @@ class Follow(models.Model):
         verbose_name_plural = 'Подписки'
         constraints = [
             models.UniqueConstraint(
-                fields=['user', 'following'],
-                name='unique_following'),
-            models.CheckConstraint(
-                check=~Q(user=F('following')),
-                name='user_not_following')
+                name='unique_following',
+                fields=('user', 'following')
+            ),
         ]
 
     def __str__(self):
